@@ -11,31 +11,28 @@ public class Question7_VendingMachine {
 		
 		int itemPrice =45;
 		int acceptedMoney=100;
-		
 		int numberOfQuarters=0;  // 25 cents
 		int numberOfDimes=0;     // 10 cents
 		int numberOfNickles=0;   //  5 cents
-		
 		int remainder=acceptedMoney-itemPrice; //Rest of the money
-		int remainder10=0; //Rest of the money after calculating the number of 10 cents
 		int remainder25=0; //Rest of the money after calculating the number of 25 cents
-		
-		System.out.println("Rest of the money : " + remainder + "\n"); 
+		int remainder10=0; //Rest of the money after calculating the number of 10 cents
+				
+		//System.out.println("Rest of the money : " + remainder + "\n"); 
 		
 		numberOfQuarters=(remainder - remainder%25)/25;
-		System.out.println("Number of 25 cents : " +numberOfQuarters + "\n");	
+		//System.out.println("Number of 25 cents : " +numberOfQuarters + "\n");	
 		
 		remainder25=remainder-(numberOfQuarters*25);
 		
 		numberOfDimes=(remainder25-remainder25%10)/10;
-		System.out.println("Number of 10 cents : " + numberOfDimes+ "\n");
+		//System.out.println("Number of 10 cents : " + numberOfDimes+ "\n");
 		
 		remainder10=remainder25-(numberOfDimes*10);
 		
 		numberOfNickles=(remainder10-remainder%5)/5;
-		System.out.println("Number of 5 cents : " + numberOfNickles+ "\n");
-		
-		
+		//System.out.println("Number of 5 cents : " + numberOfNickles+ "\n");
+				
 		System.out.println("Your change is " + numberOfQuarters + " quarters, " + numberOfDimes + " dimes, and " + numberOfNickles + " nickles");
 
 	}
