@@ -11,16 +11,33 @@ Print all the odd numbers in comma-separated form from 1 till the end (you may c
 		* You should use while loop and if-else statements.
 		* Note that, there should not be any comma after the last digit.*/
 
-		int i=1, end=10;
-		for (i=1;i<=end;i++) {
+		int i=1,    end=11;
+		
+		while (i<=end) {
+			
 			if (i%2!=0){
-				if (i==end) {
-			}
+				System.out.print(i);
+				
+				if ((i!=end)&&(i!=(end-1))) {
+					System.out.print(", ");
+					
+				}else{
+					
+				System.out.print(" ");}
+				}
+				
+			i++;
+					
+		/*for (i=1;    i<=end;   i++) {
+			
+			if (i==end) {
 				System.out.print(i);
 				break;
 			}
-			System.out.print(i + ", ");
+			if (i%2!=0){
+				System.out.print(i + ", ");
+			}*/
 		}
-	}
 
+	}
 }
