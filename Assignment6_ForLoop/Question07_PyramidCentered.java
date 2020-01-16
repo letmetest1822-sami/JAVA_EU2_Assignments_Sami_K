@@ -13,14 +13,35 @@ public class Question07_PyramidCentered {
 
               			1						*/
 		for (int i=4;  i>=1;  i--) {
-				
+			
 			for (int j=i;   j>=1;  j--) {
-				System.out.print("  " + j + "  ");
+				System.out.print(j + "   ");
 			}
-				
 			System.out.println();
-			System.out.print("   ");
+						
+			
+			/* 
+			 for(int k=i; k<1; k--) {    // i=4  -> print 1 space 
+				System.out.print("  ");  // i=3  -> print 2 space
+			}							 // i=2  -> print 3 space
+			
+			// fails
+			
+			*/
+						
+			
+			System.out.print("  ");
+			
+			if(i<4) {
+				System.out.print("  ");
+				if(i<3) {
+					System.out.print("  ");
+				}
+			}
+			
+			
 		}
 	}
 }
+
 
