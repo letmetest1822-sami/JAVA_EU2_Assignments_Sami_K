@@ -20,21 +20,21 @@ public class Question08_numberRows {
 			1. 1st row is table of 1, 2nd row is table of 2 and so on.
 			2. You can use space between the digits on the same row.  */
 		
-		/*for (int i =1; i<=10;i++) {
-			System.out.print(i + " ");
-		}
 		
-		for(int j =2; j>1;j*=2) {
-			System.out.println( j + " ");*/
-		int j=1;
+		int i, j, k;
 		
-		for (int  i=1; i<=10;i++) {
-			j=i*1;
-			System.out.print(j + "  "+"\n");
-			for (int  i2=1; i2<=10;i2++) {
-				j=i2*i;
-				System.out.print(j + "  ");
-		
+		for (i=1;        i<=10;        i++) {
+							
+			for (j=1;      j<=10;        j++) {
+				
+				k=i*j;
+				
+				System.out.print(k + "\t");
+				
+				if (j==10) {
+					
+					System.out.println();
+				}
 		
 			}
 		}
