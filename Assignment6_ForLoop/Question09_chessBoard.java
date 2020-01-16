@@ -18,20 +18,16 @@ public class Question09_chessBoard {
 			2. "W" and "B" are in alternate positions (row-wise or column-wise), 
 			you will not find consecutive W or B.*/
 		
-		for (int i=0; i<10;i++) {
-						
-			if (i%2==0) {
-				System.out.print(" W ");
-			}else {System.out.print(" B ");
-		}
-		for (int j=0; j<9;j++) {
+		for (int i=0;     i<10;     i++) {
+							
+			for (int j=1;    j<9;   j++) {
 				
-			if (i%2==1) {
-			System.out.print(" W ");
-			}else {System.out.print(" B ");
-
-			}
-
+				if ( (i%2==0) ^ (j%2==1) ) {
+			
+					System.out.print(" B ");
+			
+				}else {System.out.print(" W ");
+				}
 			}System.out.println();
 		}
 	}
