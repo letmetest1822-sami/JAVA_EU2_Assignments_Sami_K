@@ -21,19 +21,29 @@ validateTask(false,3,2)
 returns false
 		 */
 
- System.out.println(validateTask(true, 3,1));
-		
+System.out.println(validateTask(true, 2,1));
+
+System.out.println(validateTask(true, 3,1));
+
+System.out.println(validateTask(true, 3,2));
+ 
+	
+/*
+ in question 15 you got the logic's right, 
+ just put the variables b1, i1 and i2 as method's parameters, 
+ and if the condition you wrote is true, 
+ the result should be true,
+  or just print a message that Validation succeeded. 
+ */
 	}
-	public static void validateTask() {
-		boolean b1 =false;
-		int i1=0,  i2=0;
-			if ( (b1 == true) && (i1 == i2 + 1)) {
-				return;
-			}
+	public static boolean validateTask(boolean b1, int i1, int i2) {
+		
+			if ( b1  && (i1 == i2 + 1)) {
+				
+				return true;
+				
+			}else return false;
 			
-		
-		
-		
 	}
 
 }
