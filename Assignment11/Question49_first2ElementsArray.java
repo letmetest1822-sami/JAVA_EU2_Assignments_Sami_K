@@ -1,5 +1,7 @@
 package assignments.Assignment11;
 
+import java.util.Arrays;
+
 public class Question49_first2ElementsArray {
 
 	public static void main(String[] args) {
@@ -14,7 +16,10 @@ Sample Output:
      input 1,
      output: [1]
 		 */
-
+		int input [] = {1, 2, 3};
+		first2ElementsArray(input);
 	}
-
+	public static void first2ElementsArray(int []arr) {
+		System.out.println(Arrays.toString(Arrays.copyOfRange(arr, 0, 2)));
+	}
 }
