@@ -17,9 +17,17 @@ Sample Output:
      output: [1]
 		 */
 		int input [] = {1, 2, 3};
+		int input2 [] = {1};
 		first2ElementsArray(input);
+		first2ElementsArray(input2);	
 	}
 	public static void first2ElementsArray(int []arr) {
-		System.out.println(Arrays.toString(Arrays.copyOfRange(arr, 0, 2)));
+		
+		if(arr.length<2) {
+			System.out.println(Arrays.toString(arr));
+		}else 
+			{
+			System.out.println(Arrays.toString(Arrays.copyOfRange(arr, 0, 2)));
+		}
 	}
 }
