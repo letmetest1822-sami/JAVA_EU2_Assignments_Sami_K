@@ -11,33 +11,47 @@ Please look at below examples:
 
      		s1 	==> "12345"
      		s2 	==> "abcde"
-     mergeStrings(s1,s2) ==> "1a2b3c4d5e"
+    mergeStrings(s1,s2) ==> "1a2b3c4d5e"
 
-     mergeStrings("wooden", "spoon") ==> "wsopoodoenn"
+    mergeStrings("wooden", "spoon") ==> "wsopoodoenn"
 
-    mergeStrings("wooden", "spoon") ==> "jsaevlaenium"
+    mergeStrings("java", "selenium") ==> "jsaevlaenium"
 		 */
 
 		String s1 ="12345";
 		String s2 ="abcde";
 		
 		mergeStrings(s1,s2);
-		//mergeStrings("wooden", "spoon");
-		//mergeStrings("wooden", "spoon");
+		mergeStrings("wooden", "spoon");
+		mergeStrings("java", "selenium");
 	}
 
 	public static void mergeStrings(String word1,String word2) {
-		int len1 = word1.length();
-		int len2 = word2.length();
 		
+		int small =0;
+				
+		if (word1.length()>=word2.length()){
+			small = word2.length();
+		}
+		else if (word2.length()>word1.length()){
+			small = word1.length();}
 		String merged = "";
 		
-		for (int i = 0; i<len1+len2; i++){
 			
-			if((i<=len1)&&(i<=len2)){
-			merged += word1.charAt(i) + word2.charAt(i);
+				
+			for (int i = 0; i<small; i++){
+				merged += word1.substring(i, i+1) + word2.substring(i, i+1);
+					
 			}
-		}
-		System.out.println(merged);
+			if ( word2.length() > word1.length() ){
+					
+				merged +=  word2.substring(word1.length(), word2.length());
+			}
+			else if ( word1.length() > word2.length() ){
+					
+				merged +=  word1.substring(word2.length(), word1.length());
+			}
+			System.out.println(merged);
 	}
 }
+

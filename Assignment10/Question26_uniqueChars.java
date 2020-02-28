@@ -24,15 +24,15 @@ Sample Output:
 	}
 	public static void uniqueChars(String word) {
 	
+		String unique = " ";
 		
-		//for (int i=0; i<word.length();i++) {
-			for( int j = 1; j<word.length()-2;   j++) {
-				if(word.contains(word.substring(j+1,j+2))) {
-					word.replace(word.substring(j+1,j+2), "");
-				}
-			}
-			System.out.println(word);
-			
-		}
+        for (int i=0 ; i<word.length(); i++) {
+        	
+        	if (unique.indexOf(word.charAt(i))==-1) {
+        		
+	        	unique = unique+(word.charAt(i));
+		    }
+	    }
+        System.out.println(unique);
 	}
-
+}
