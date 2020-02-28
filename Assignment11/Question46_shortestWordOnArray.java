@@ -15,30 +15,33 @@ Sample Output:
      input: olive, fish, pursuit, old, warning, python, java, coffee, cat, ray
      output: [cat, old, ray]
 		 */
-		String input = "olive,fish,pursuit,old,warning,python,java,coffee,cat,ray";
+		String input = "olive, fish, pursuit, old, warning, python, java, coffee, cat, ray";
 		
 		shortestWordOnArray(input);
 	}
 	public static void shortestWordOnArray(String word) {
 		
-		String[] arr = word.split(","); 
+		String[] arr = word.split(", "); 
+		
 		String shortest = arr[0];
+		
 		for (int i = 1; i<arr.length;i++) {
 			if (arr[i].length() < shortest.length()) {
 				shortest = arr [i];
-				
 			}
 		}
-		System.out.println(shortest);
-		for (int i = 0; i<arr.length;i++) {
-			if (arr [i].length() == shortest.length()) {
+		String shortest1 = shortest;
+		shortest = "";
+		
+		for (int i = 0;    i<arr.length;   i++) {
 			
-			shortest+=  "," + arr [i];
+			if (shortest1.length() == arr [i].length() ) {
 			
+			shortest +=  arr [i] + " ";
 			}
 		}
-		String[] arrShortest = word.split(",");
-		System.out.println(Arrays.toString(arr));
-		//System.out.println(shortest);
+		String[] arrShortest = shortest.split(" ");
+		Arrays.sort(arrShortest);
+		System.out.println(Arrays.toString(arrShortest));
 	}
 }

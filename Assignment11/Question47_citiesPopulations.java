@@ -1,5 +1,7 @@
 package assignments.Assignment11;
 
+import java.util.Arrays;
+
 public class Question47_citiesPopulations {
 
 	public static void main(String[] args) {
@@ -29,7 +31,34 @@ Below expression will print array in this format:
 Code:
 System.out.println(Arrays.toString(inhabitants)));
 		 */
-
+	int inhabitants [] = {3, 6, 0, 4, 3, 2, 7, 1};
+	citiesPopulations(inhabitants);
+	
 	}
-
+	public static int sumPopulation(int [] arr) {
+		int sumArr = 0;
+		
+		for  (int i = 0; i<arr.length;  i++) {
+			
+			sumArr += arr [i];
+		}
+		return sumArr;
+	}	
+	
+	public static void citiesPopulations(int [] arr) {
+		
+		int day=0;
+		System.out.println("Day " + day + " " + Arrays.toString(arr));
+		
+		do {
+			for  (int i =0; i<arr.length;  i++) {
+				arr [i] = arr [i] / 2 ;	
+			}
+			day++;
+			System.out.println("Day " + day +  " " + Arrays.toString(arr));
+		}
+		while (sumPopulation(arr)  != 0);
+		
+		System.out.println("---- EXTINCT ----");
+	}
 }

@@ -1,5 +1,8 @@
 package assignments.Assignment11;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Question48_calculateBinaryValue {
 
 	public static void main(String[] args) {
@@ -28,6 +31,44 @@ Sample Output:
      binary -> [1, 1, 1, 1, 1, 1, 1, 1]
 		 */
 
+		
+		ArrayList<Integer> powers = new ArrayList<Integer>();
+	    ArrayList<Integer> binaryStore = new ArrayList<Integer>();
+
+	    powers.add(128);
+	    powers.add(64);
+	    powers.add(32);
+	    powers.add(16);
+	    powers.add(8);
+	    powers.add(4);
+	    powers.add(2);
+	    powers.add(1);
+
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("Enter an integer to convert binary: ");
+	    int input = sc.nextInt();
+	    int printableInput = input;
+
+	    for (int i : powers) {
+	        if (input < i) {
+	            binaryStore.add(0);     
+	        } else {
+	            input = input - i;
+	            binaryStore.add(1);             
+	        }           
+	    }
+
+	    String newString= binaryStore.toString();
+	    String finalOutput = newString
+	    		.replace("[", "")
+	            .replace(" ", "")
+	            .replace("]", "")
+	            .replace(",", "");
+
+	    System.out.println("Integer value: " + printableInput + "\nBinary value: " + finalOutput);
+	    sc.close();
+		
+		
 	}
 
 }
