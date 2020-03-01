@@ -21,7 +21,8 @@ public class Question63_removeFirstTwo {
 		System.out.println(doubles);
 		System.out.println(removeFirstTwo(doubles));
 	}
-	public static ArrayList<doubles> removeFirstTwo(ArrayList<Double> doubles) {
+	public static ArrayList<Double> removeFirstTwo(ArrayList<Double> doubles) {
+		
 		doubles.remove(0);
 		doubles.remove(1);
 		
