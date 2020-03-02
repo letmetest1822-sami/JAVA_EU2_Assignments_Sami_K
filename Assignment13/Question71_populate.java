@@ -1,5 +1,7 @@
 package assignments.Assignment13;
 
+import java.util.Arrays;
+
 public class Question71_populate {
 
 	public static void main(String[] args) {
@@ -15,6 +17,15 @@ Sample Output:
      returns:[1,2,3,4,5]
 		 */
 
+		int [] input = new int [5];
+		
+		populate (input);
+		
 	}
-
+	public static void populate (int []arr) {
+		for (int i = 0; i< arr.length; i++) {
+			arr[i] = i+1;
+		}
+		System.out.println(Arrays.toString(arr));
+	}
 }
