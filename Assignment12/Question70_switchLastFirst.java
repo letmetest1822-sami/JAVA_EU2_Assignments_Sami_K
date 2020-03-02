@@ -1,5 +1,7 @@
 package assignments.Assignment12;
 
+import java.util.ArrayList;
+
 public class Question70_switchLastFirst {
 
 	public static void main(String[] args) {
@@ -15,6 +17,26 @@ Sample Output:
      returns:[5,2,3,7]
 		 */
 
+		ArrayList<Integer> IntegerList1 = new ArrayList<>();
+		
+		IntegerList1.add(1);
+		IntegerList1.add(2);
+		IntegerList1.add(3);
+		IntegerList1.add(4);
+		
+		
+		System.out.println(IntegerList1);
+		switchLastFirst(IntegerList1);
+		
 	}
-
+	public static void switchLastFirst(ArrayList<Integer> AL) {
+		
+		int swap = AL.get(0);
+		
+			AL.set(0, AL.get(AL.size()-1));
+			
+			AL.set(AL.size()-1, swap);
+			
+		System.out.println(AL);
+	}
 }

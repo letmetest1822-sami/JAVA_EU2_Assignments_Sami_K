@@ -1,5 +1,7 @@
 package assignments.Assignment12;
 
+import java.util.ArrayList;
+
 public class Question66_appendPosSum {
 
 	public static void main(String[] args) {
@@ -17,6 +19,38 @@ public class Question66_appendPosSum {
 		 * The original ArrayList should remain unchanged.
 		 */
 
+		ArrayList<Integer> IntegerList = new ArrayList<>();
+		
+		IntegerList.add(10);
+		IntegerList.add(-11);
+		IntegerList.add(7);
+		IntegerList.add(-3);
+		IntegerList.add(4);
+		IntegerList.add(-13);
+		IntegerList.add(-17);
+		IntegerList.add(3);
+		
+		System.out.println(IntegerList.toString());
+		System.out.println(appendPosSum(IntegerList).toString());
+		
 	}
-
+	public static ArrayList<Integer> appendPosSum(ArrayList<Integer> inputAL){
+		
+		ArrayList<Integer> sumOfPositiveElements = new ArrayList<>();
+		
+		int sum = 0;
+		
+		for (int i = 0; i< inputAL.size(); i++) {
+			if (inputAL.get(i) > 0) {
+				
+				sumOfPositiveElements.add(inputAL.get(i));
+				
+				sum += inputAL.get(i);
+			}
+		}
+		sumOfPositiveElements.add(sum);
+		
+		return sumOfPositiveElements;
+	}
 }
+
