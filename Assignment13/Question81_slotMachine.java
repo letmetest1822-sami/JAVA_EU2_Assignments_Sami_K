@@ -28,72 +28,73 @@ public class Question81_slotMachine {
 		 * The program will ask whether the user wants to play again. 
 		 * If so, these steps are repeated. 
 		 * If not, the program displays the total amount of money entered into the slot machine and the total amount won.
-
- 
 		 */
-
+	
+	String [] startGame = new String[3];
+	Scanner input 	=  new Scanner (System.in);
+	String repeat 	= "Y";
+	int moneyAtTurn = 0;
+	int moneyEarned = 0;
+	int moneySpent 	= 0;
+	
+	while (!repeat.equalsIgnoreCase("N") ) {
 		
-		Scanner input = new Scanner (System.in);
-		System.out.println("*---------------------------------------------*");
-		System.out.print("| Enter the amount of money you want to play : ");
-			int amountToPlay = input.nextInt();
-			
-			String repeat = "Y";
-			
-			String [] startGame = new String[3];
-			
-			int moneyAtTurn = 0;
-			int moneyEarned = 0;
-			int moneySpent = 0;
-			
-			moneySpent = moneySpent + amountToPlay;
+		System.out.println("*---------------------------------------*");
+		System.out.print("| Enter the amount you want to play : ");
 		
-			startGame = gameScreen();
-			moneyAtTurn = accounting(amountToPlay, startGame);					
-			System.out.println("| You won			: " + moneyAtTurn + "	|");
-			
-			moneyEarned += moneyAtTurn;				
-			
-			System.out.println("| Total amount played		: " + moneySpent + "	|");
-			System.out.println("| Total Earnings		: " + moneyEarned+ "	|");
-			System.out.println("*---------------------------------------*");
+		int amountToPlay = input.nextInt();
+					
+		moneySpent = moneySpent + amountToPlay;
 		
+		startGame = gameScreen();
+		
+		moneyAtTurn = accounting(amountToPlay, startGame);	
+		
+		System.out.println("| You Won !!!			: " + moneyAtTurn + "	|");
 			
-		System.out.println("| Do you want to play again y = yes ?	|"); 
-		System.out.println("*---------------------------------------*");		
-		repeat = input.nextLine();
-	}
-
+		moneyEarned += moneyAtTurn;				
+			
+		System.out.println("| Total Amount Played		: " + moneySpent + "	|");
+		System.out.println("| Total Earnings		: " + moneyEarned+ "	|");
+		System.out.println("*----------------------------------------*");
+		System.out.println("| Press any letter to continue 		|"); 
+		System.out.print("| or N to quit the game        :"); 
+		
+		repeat = input.next();
+		
+		System.out.println("*---------------------------------------*");
+	}	
+}
 	public static String[] gameScreen() {
 		
 		Random rn = new Random();
-		String[] words = {"Cherries", "Oranges", "Plums", "Bells", "Melons", "Bars"};
+		String[] words = {"Cherries", "Oranges ", " Plums  ", " Bells  ", " Melons  ", "  Bars  "};
 		String[] images = new String[3];
 		
-		for (int i=0;      i<3;     i++) {
-			int showImage = rn.nextInt(5)+1;
-			images[i] = words[showImage];
-		}
-		System.out.println("*----------------------------------------*");
+			for (int i=0;      i<3;     i++) {
+				int showImage = rn.nextInt(5)+1;
+				images[i] = words[showImage];
+			}
+		System.out.println("*---------------------------------------*");
 		System.out.println("|                                       |");
-		System.out.println("|       " +Arrays.toString(images) + "		|");	
+		System.out.println("|     " +Arrays.toString(images) + "	|");	
 		System.out.println("|                                       |");
-		System.out.println("*----------------------------------------*");
-		return images;
-		
+		System.out.println("*---------------------------------------*");
+	return images;	
 }
 	public static int accounting(int money, String[] gameScreen) {
 		
 		int moneyEarned = money;
 		
-		if (gameScreen[0] == gameScreen[1] && gameScreen[0]==gameScreen[2]) {
-			moneyEarned *= 3;
-		}else if(gameScreen[0] == gameScreen[1] || gameScreen[0] == gameScreen[2] || gameScreen[1] == gameScreen[2]) {
-			moneyEarned *= 2;
-		}else {
-			moneyEarned *= 0;
+			if (gameScreen[0] == gameScreen[1] && gameScreen[0]	==	gameScreen[2]) {
+				moneyEarned *= 3;
+			}
+			else if(gameScreen[0] == gameScreen[1] || gameScreen[0] == gameScreen[2] || gameScreen[1] == gameScreen[2]) {
+				moneyEarned *= 2;
+			}
+			else {
+				moneyEarned *= 0;
 		}
-		
-		return moneyEarned;
-}
+	return moneyEarned;
+	}
 }
